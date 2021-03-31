@@ -3,13 +3,13 @@
   <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <div >
     <div>
-    <Cartas v-show="show"  />
+    <Cartas v-show="show" class="container"  />
     </div>
 
     <Button label="Show saved" @click="onClick()" />
-    <div v-show="!show" v-for="user in users" :key="user.id" >      
+    <div v-show="!show" v-for="user in users" :key="user.id"  class="container">      
 
-            <Card style="width: 25em " >
+            <Card style="width: 25em " class="cards">
                 <template #header>
                     
                     <img v-bind:src=" user.image" /> 
@@ -81,8 +81,17 @@ export default {
 body{
   background: black;
 }
-div{
- margin: 1px;
+.cards{
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+  margin: 10px;
+  max-width: 1000px;
+}
+.container{
+  display: flex;
+  justify-content:center
+
 }
  
 
